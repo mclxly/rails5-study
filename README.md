@@ -1,24 +1,10 @@
 ## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+这个项目是学习目的，基于 Rails 5。
 
-Things you may want to cover:
+已包含特性:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Bootstrap (4.0.0.alpha3)
+* Devise (Authentication)
+ * /recipes 下创建新 Recipe 会自动刷新列表
+* ActionCable (Websocket)
