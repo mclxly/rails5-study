@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <!--
   <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
     <a class="navbar-brand" href="#">Navbar</a>
       <ul class="nav navbar-nav">
@@ -31,7 +32,46 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  -->
+    <!-- Static navbar -->
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+          <a class="navbar-brand" href="#"><%= image_tag "3kmq.png" %></a>
+          <ul class="nav navbar-nav pull-xs-left">
+            <li class="nav-item active"><%= link_to "Recipes",
+            recipes_path, :class => "nav-link" %></li>
+          </ul>
+          <ul class="nav navbar-nav pull-xs-right">
+            <% if user_signed_in? %>
+            <li class="nav-item"><%=link_to "#{current_user.email}", '', :class => "nav-link"
+            %></li>
+            <li class="nav-item"><%= link_to "Logout",
+            destroy_user_session_path, :class => "nav-link"%></li>
+            <%else%>
+            <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => "nav-link"
+            %></li>
+            <li class="nav-item"><%= link_to "SignUp",
+            new_user_registration_path, :class => "nav-link"%></li>
+            <%end%>
+          </ul>
+        </div>
+    </nav>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+          <%= yield %>  
+          </div>
+          
+        </div>        
+      </div>
+    </div>
   </body>
 </html>
