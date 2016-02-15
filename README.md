@@ -8,3 +8,4 @@
 * Devise (Authentication)
  * /recipes 下创建新 Recipe 会自动刷新列表
 * ActionCable (Websocket)
+* Momentjs (human read time)

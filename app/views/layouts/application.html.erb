@@ -63,7 +63,36 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
-          
+          <div class="card">
+            <div class="card-header">
+              Food Preferences
+            </div>
+            <div class="card-block">
+              <% @food_preferences.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Food Type
+            </div>
+            <div class="card-block">
+              <% @food_types.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Cuisine
+            </div>
+            <div class="card-block">
+              <% @cuisines.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
         </div>
         <div class="col-lg-9">
           <div class="row">

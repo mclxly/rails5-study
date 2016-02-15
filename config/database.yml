@@ -12,7 +12,7 @@ default: &default
 #
 production:
   <<: *default
-  database: cable
+  database: cable-dev
 
 #
 # Development specific

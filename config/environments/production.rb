@@ -79,4 +79,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Action Cable endpoint configuration
+  config.action_cable.url = 'ws://test.newbiiz.com:3000/cable'
+  config.action_cable.allowed_request_origins = [ 'http://test.newbiiz.com', /http:\/\/test.newbiiz.*/ ]
+
+  config.serve_static_assets = false
 end
