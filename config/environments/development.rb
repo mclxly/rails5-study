@@ -61,4 +61,5 @@ Rails.application.configure do
   config.action_cable.url = 'ws://test.newbiiz.com:3000/cable'
   config.action_cable.allowed_request_origins = [ 'http://test.newbiiz.com', /http:\/\/test.newbiiz.*/ ]
 
+  config.i18n.default_locale = :"zh-CN"
 end

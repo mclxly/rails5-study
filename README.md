@@ -6,6 +6,10 @@
 
 * Bootstrap (4.0.0.alpha3)
 * Devise (Authentication)
- * /recipes 下创建新 Recipe 会自动刷新列表
+ * 加入汉化文件
+* /recipes 下创建新 Recipe 会自动刷新列表
 * ActionCable (Websocket)
-* Momentjs (human read time)
+* Momentjs (human datetime read："10分钟前")
+* friendly_id (friendly slug)
+* Tag
+* workflow

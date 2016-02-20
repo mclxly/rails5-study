@@ -60,3 +60,9 @@ source 'https://rails-assets.org' do
 end
 
 gem 'momentjs-rails'
+
+# Add support for Rails 5
+gem "friendly_id", :github => 'norman/friendly_id', :branch => 'master'
+
+# workflow
+gem 'workflow', :github => 'geekq/workflow'

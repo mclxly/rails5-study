@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="col-lg-9">
-  <h1>Events</h1>
+  <h1>Recently Created Events</h1>
 
   <table>
     <thead>
@@ -49,15 +49,7 @@
 
   <br>  
 </div>
-<div class="col-lg-3">
-  <h3>Search Tags</h3>
-  <div>
-    <% tag_cloud Event.tag_counts, %w{css1 css2 css3
-    css4} do |tag, css_class| %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-    <% end %>
-  </div>
-</div>
+<%= render "tag_cloud"%>
 
 
 

@@ -20,5 +20,3 @@
 //= require_tree ./channels
 //= require moment
 //= require moment/zh-cn.js
-
-
