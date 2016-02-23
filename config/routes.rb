@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pins
+  resources :boards
   resources :events do
     get :join, to: 'events#join', as: 'join'
     get :accept_request, to: 'events#accept_request', as: 'accept_request'

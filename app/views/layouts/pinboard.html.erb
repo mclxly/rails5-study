@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cable</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+  <!--
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <a class="navbar-brand" href="#">Navbar</a>
+      <ul class="nav navbar-nav">
+  <% if user_signed_in? %>
+  <li class="nav-item"><%=link_to "#{current_user.email}", '', :class => "nav-link" %></li>
+  <li class="nav-item active"><%= link_to "Logout",
+  destroy_user_session_path, :class => "nav-link" %></li>
+  <%else%>
+  <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => "nav-link" %></li>
+  <li class="nav-item active"><%= link_to "SignUp",
+  new_user_registration_path, :class => "nav-link" %></li>
+  <%end%>
+  </ul>
+    <form class="form-inline pull-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-success-outline" type="submit">Search</button>
+    </form>
+  </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  -->
+    <!-- Static navbar -->
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+          <a class="navbar-brand" href="#"><%= image_tag "3kmq.png" %>Pinboard</a>
+          <ul class="nav navbar-nav pull-xs-left">
+            <li class="nav-item active"><%= link_to "Recipes",
+            recipes_path, :class => "nav-link" %></li>
+            <li class="nav-item active"><%= link_to "Events",
+            events_path, :class => "nav-link" %></li>
+            <li class="nav-item active"><%= link_to "My Events",
+            my_events_path, :class => "nav-link" %></li>
+          </ul>
+          <ul class="nav navbar-nav pull-xs-right">
+            <% if user_signed_in? %>
+            <li class="nav-item"><%=link_to "#{current_user.email}", '', :class => "nav-link"
+            %></li>
+            <li class="nav-item"><%= link_to "Logout",
+            destroy_user_session_path, :class => "nav-link"%></li>
+            <%else%>
+            <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => "nav-link"
+            %></li>
+            <li class="nav-item"><%= link_to "SignUp",
+            new_user_registration_path, :class => "nav-link"%></li>
+            <%end%>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="card">
+            <div class="card-header">
+              Food Preferences
+            </div>
+            <div class="card-block">
+              <% @food_preferences.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Food Type
+            </div>
+            <div class="card-block">
+              <% @food_types.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Cuisine
+            </div>
+            <div class="card-block">
+              <% @cuisines.each do |fp| %>
+              <p><%= fp.name%></p>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+          <%= yield %>  
+          </div>
+          
+        </div>        
+      </div>
+    </div>
+  </body>
+</html>

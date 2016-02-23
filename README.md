@@ -13,3 +13,5 @@
 * friendly_id (friendly slug)
 * Tag
 * workflow
+* 图片处理
+ * ImageMagick(版本:convert -version)
