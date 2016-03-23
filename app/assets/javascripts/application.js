@@ -20,3 +20,8 @@
 //= require_tree ./channels
 //= require moment
 //= require moment/zh-cn.js
+//
+//= require jquery
+//= require jquery_ujs
+//= require jquery.infinitescroll
+//= require wookmark.min

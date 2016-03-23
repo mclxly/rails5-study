@@ -2,30 +2,54 @@
 
 <h1>Pins</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Board</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
+<div id="main" role="main">
+  <table id="posts">
+    <thead>
       <tr>
-        <td><%= pin.name %></td>
-        <td><%= pin.image %></td>
-        <td><%= pin.board_id %></td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Board</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody id="tiles" class="page">
+      <% @pins.each do |pin| %>
+        <tr class="post">
+          <td><%= pin.name %></td>
+          <td><%= link_to(image_tag(pin.image.thumb.url), pin) %></td>
+          <td><%= pin.board_id %></td>
+          <td><%= link_to 'Show', pin %></td>
+          <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+          <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Pin', new_pin_path %>
+  <br>
+  <%= paginate @pins %>
+  <hr>
+  <%= link_to 'New Pin', new_pin_path %>
+
+</div>
+
+<script type="text/javascript">
+  // var $handler = $('#tiles td');
+  // $handler.wookmark({
+  //   align: 'center',
+  //   autoResize: false,
+  //   comparator: null,
+  //   container: $('#main'),
+  //   offset: 5,
+  //   outerOffset: 10,
+  //   itemWidth: 210
+  // });
+  // $handler.click(function(){
+  //   var newHeight = $('img', this).height() + Math.round(Math.
+  //     random() * 300 + 30);
+  //   $(this).css('height', newHeight+'px');
+  //   // Update the layout.
+  //   $handler.wookmark();
+  // });
+</script>

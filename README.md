@@ -1,6 +1,7 @@
 ## README
 
 这个项目是学习目的，基于 Rails 5。
+colin.lin@newbiiz.com/123
 
 已包含特性:
 
@@ -13,5 +14,6 @@
 * friendly_id (friendly slug)
 * Tag
 * workflow
-* 图片处理
+* 图片上传与现实，生产不同尺寸图片
  * ImageMagick(版本:convert -version)
+* 无限滚动页面

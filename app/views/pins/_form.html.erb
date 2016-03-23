@@ -16,9 +16,16 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :image %>
     <%= f.text_field :image %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= @pin.image_url if @pin.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="field">

@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :events, :through => :attendances
 
   has_many :boards
+
+  has_and_belongs_to_many :organizations
 end

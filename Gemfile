@@ -66,3 +66,15 @@ gem "friendly_id", :github => 'norman/friendly_id', :branch => 'master'
 
 # workflow
 gem 'workflow', :github => 'geekq/workflow'
+
+# upload files
+gem 'carrierwave'
+
+# handle image
+gem 'rmagick'
+
+# pagination
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+
+# Step-By-Step Wizard Controllers
+gem 'wicked'

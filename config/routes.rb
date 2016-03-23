@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # resources :setup_organization
+
   resources :pins
   resources :boards
   resources :events do
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :events
   resources :recipes
+  # devise_for :users, :controllers => { :registrations => "setup_registration" } do
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

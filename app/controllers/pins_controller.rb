@@ -4,7 +4,8 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.all
+    # @pins = Pin.all
+    @pins = Pin.order(:created_at).page(params[:page])
   end
 
   # GET /pins/1
@@ -64,11 +65,11 @@ class PinsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
-      @pin = Pin.find(params[:id])
+      @pin = Pin.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:name, :image, :board_id)
+      params.require(:pin).permit(:name, :image, :image_cache, :board_id)
     end
 end
