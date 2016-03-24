@@ -17,3 +17,4 @@ colin.lin@newbiiz.com/123
 * 图片上传与现实，生产不同尺寸图片
  * ImageMagick(版本:convert -version)
 * 无限滚动页面
+* Vue.js(ref: https://rlafranchi.github.io/2016/03/09/vuejs-and-rails/)

@@ -25,3 +25,7 @@
 //= require jquery_ujs
 //= require jquery.infinitescroll
 //= require wookmark.min
+
+//= require vue
+//= require vue-router
+//= require vue-resource

@@ -78,14 +78,17 @@ ready = ->
     methods:
       addEvent: ->
         that = this
-        this.$http.post('/events.json',{ event: this.event }).then(
-          (res)->
+        $.ajax(
+          method: 'POST'
+          data:
+            event: that.event
+          url: '/events.json'
+          success: (res)->
             that.errors = {}
-            that.event = {}
-            that.events.push(res.data)
+            that.events.push(res)
             return
-          (res)->
-            that.errors = res.data.errors
+          error: (res)->
+            that.errors = res.responseJSON.errors
             return
         )
         return

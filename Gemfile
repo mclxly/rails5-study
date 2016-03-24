@@ -78,3 +78,6 @@ gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'ma
 
 # Step-By-Step Wizard Controllers
 gem 'wicked'
+
+# vue.js(EventsController)
+gem 'vuejs-rails'

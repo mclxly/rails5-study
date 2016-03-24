@@ -5,6 +5,92 @@
 <% end %>
 
 <div class="col-lg-9">
+  <h1>Vue.js Events</h1>
+  <div id="events">
+    <table>
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>location</th>
+          <th>address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="event in events">
+          <td>1{{ event.title }}</td>
+          <td>2{{ event.location }}</td>
+          <td>3{{ event.address }}</td>
+          <td></td>
+        </tr>
+        <tr
+          is="event-row"
+          v-for="event in events"
+          :event="event">
+        </tr>
+        <script type="text/x-template" id="event-row">
+        <tr>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.title"><br>
+              <span style="color:red">{{ errors.title }}</span>
+            </div>
+            <div v-else>
+              {{ event.title }}  
+            </div>            
+          </td>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.location"><br>
+              <span style="color:red">{{ errors.location }}</span>
+            </div>
+            <div v-else>
+              {{ event.location }}  
+            </div>            
+          </td>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.address"><br>
+              <span style="color:red">{{ errors.address }}</span>
+            </div>
+            <div v-else>
+              {{ event.address }}  
+            </div>            
+          </td>
+          <td>
+            <!-- Save button calls updateEmployee -->
+            <button v-if="editMode" @click="updateEvent">Save</button>
+            <!-- Edit button puts row into edit mode -->
+            <button v-else @click="editMode = true">Edit</button>
+            <!-- the Fire button inside the component template-->
+            <button v-if="!editMode" @click="removeEvent" style="color:red">Fire</button>
+          </td>
+        </tr>
+        </script>
+
+        <tr>
+          <td>
+            <!-- Input -->
+            <input type="text" v-model="event.title"><br>
+            <!-- Validation errors -->
+            <span style="color:red">{{ errors.title }}</span>
+          </td>
+          <td>
+            <!-- Input -->
+            <input type="text" v-model="event.location"><br>
+            <!-- Validation errors -->
+            <span style="color:red">{{ errors.location }}</span>
+          </td>
+          <td></td>
+          <!-- button click calls hireEmployee -->
+          <td><button @click="addEvent">Add Event</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
   <h1>Events</h1>
 
   <table>
