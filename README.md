@@ -18,3 +18,5 @@ colin.lin@newbiiz.com/123
  * ImageMagick(版本:convert -version)
 * 无限滚动页面
 * Vue.js(ref: https://rlafranchi.github.io/2016/03/09/vuejs-and-rails/)
+* SMTP (mailgun)(events_controller)
+ * [Responsive Emai Templates](http://foundation.zurb.com/emails/email-templates.html)

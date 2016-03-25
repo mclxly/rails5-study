@@ -62,4 +62,14 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = [ 'http://test.newbiiz.com', /http:\/\/test.newbiiz.*/ ]
 
   config.i18n.default_locale = :"zh-CN"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "sandbox59647.mailgun.org",
+    :user_name => "postmaster@sandbox59647.mailgun.org",
+    :password => "15071362030"
+  }
 end

@@ -8,6 +8,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    # send email twice
+    # UserMailer.welcome_email(current_user).deliver_later
+    UserMailer.welcome_email(current_user).deliver_now
+
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
     else
