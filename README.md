@@ -20,3 +20,4 @@ colin.lin@newbiiz.com/123
 * Vue.js(ref: https://rlafranchi.github.io/2016/03/09/vuejs-and-rails/)
 * SMTP (mailgun)(events_controller)
  * [Responsive Emai Templates](http://foundation.zurb.com/emails/email-templates.html)
+* 自定义Generator(ref: http://guides.rubyonrails.org/generators.html)
