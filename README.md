@@ -3,7 +3,11 @@
 这个项目是学习目的，基于 Rails 5。
 colin.lin@newbiiz.com/123
 
-已包含特性:
+## Changes
+
+* [2016-11-17]添加测试数据[dvd rent](http://www.postgresqltutorial.com/postgresql-sample-database/)，用于测试模型Active Record的使用;
+
+## 已包含特性:
 
 * Bootstrap (4.0.0.alpha3)
 * Devise (Authentication)

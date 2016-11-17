@@ -50,7 +50,7 @@
             <li class="nav-item active"><%= link_to "Pins",
             pins_path, :class => "nav-link" %></li>
           </ul>
-          <ul class="nav navbar-nav pull-xs-right">
+          <ul class="nav navbar-nav pull-xs-right float-xs-right flex-items-xs-right">
             <% if user_signed_in? %>
             <li class="nav-item"><%=link_to "#{current_user.email}", '', :class => "nav-link"
             %></li>
