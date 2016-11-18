@@ -4,68 +4,9 @@
 </div>
 <% end %>
 
-<script type="text/x-template" id="event-row-template">
-  <tr>
-    <td>
-      <div v-if="editMode">
-        <input type="text" v-model="evt.title"><br>
-        <span style="color:red">{{ errors.title }}</span>
-      </div>
-      <div v-else>
-        title:{{ evt.title }}
-      </div>            
-    </td>
-    <td>
-      <div v-if="editMode">
-        <input type="text" v-model="evt.location"><br>
-        <span style="color:red">{{ errors.location }}</span>
-      </div>
-      <div v-else>
-        {{ evt.location }}  
-      </div>            
-    </td>
-    <td>
-      <div v-if="editMode">
-        <input type="text" v-model="evt.address"><br>
-        <span style="color:red">{{ errors.address }}</span>
-      </div>
-      <div v-else>
-        {{ evt.address }}  
-      </div>            
-    </td>
-    <td>
-      <!-- Save button calls updateEmployee -->
-      <button v-if="editMode" @click="updateEvent">Save</button>
-      <!-- Edit button puts row into edit mode -->
-      <button v-else @click="editMode = true">Edit</button>
-      <!-- the Fire button inside the component template-->
-      <button v-if="!editMode" @click="removeEvent" style="color:red">Fire</button>
-    </td>
-  </tr>
-</script>
-
 <div class="col-lg-9">
   <h1>Vue.js Events</h1>
   <div id="events">
-    <!-- <table>
-      <thead>
-        <tr>
-          <th>title</th>
-          <th>location</th>
-          <th>address</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="evt in events">
-          <td>{{evt.title}}</td>
-          <td>{{evt.location}}</td>
-          <td>{{evt.address}}</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table> -->
-
     <table>
       <thead>
         <tr>
@@ -76,10 +17,56 @@
         </tr>
       </thead>
       <tbody>
-        
-        <tr is="event-row" v-for="evt in events" v-bind:evt="evt">
-          
+        <tr v-for="event in events">
+          <td>1{{ event.title }}</td>
+          <td>2{{ event.location }}</td>
+          <td>3{{ event.address }}</td>
+          <td></td>
         </tr>
+        <tr
+          is="event-row"
+          v-for="event in events"
+          :event="event">
+        </tr>
+        <script type="text/x-template" id="event-row">
+        <tr>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.title"><br>
+              <span style="color:red">{{ errors.title }}</span>
+            </div>
+            <div v-else>
+              {{ event.title }}  
+            </div>            
+          </td>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.location"><br>
+              <span style="color:red">{{ errors.location }}</span>
+            </div>
+            <div v-else>
+              {{ event.location }}  
+            </div>            
+          </td>
+          <td>
+            <div v-if="editMode">
+              <input type="text" v-model="event.address"><br>
+              <span style="color:red">{{ errors.address }}</span>
+            </div>
+            <div v-else>
+              {{ event.address }}  
+            </div>            
+          </td>
+          <td>
+            <!-- Save button calls updateEmployee -->
+            <button v-if="editMode" @click="updateEvent">Save</button>
+            <!-- Edit button puts row into edit mode -->
+            <button v-else @click="editMode = true">Edit</button>
+            <!-- the Fire button inside the component template-->
+            <button v-if="!editMode" @click="removeEvent" style="color:red">Fire</button>
+          </td>
+        </tr>
+        </script>
 
         <tr>
           <td>

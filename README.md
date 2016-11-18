@@ -5,7 +5,7 @@ colin.lin@newbiiz.com/123
 
 ## Changes
 
-* [2016-11-17]添加测试数据[dvd rent](http://www.postgresqltutorial.com/postgresql-sample-database/)，用于测试模型Active Record的使用;
+* [2016-11-17]测试模型Active Record的使用;
 
 ## 已包含特性:
 
@@ -25,3 +25,7 @@ colin.lin@newbiiz.com/123
 * SMTP (mailgun)(events_controller)
  * [Responsive Emai Templates](http://foundation.zurb.com/emails/email-templates.html)
 * 自定义Generator(ref: http://guides.rubyonrails.org/generators.html)
+
+## FAQ
+
+* 遇到 websocket connection failed 需要去 config 中配置

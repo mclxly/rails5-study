@@ -12,24 +12,28 @@ ready = ->
   )
 
   Vue.component('event-row', {
-    template: '#event-row',
+    template: '#event-row-template',
     props: {
-      event: Object
+      evt: {
+        type: Object
+      }
     }
     data: ->
       editMode: false,
-      errors: {}
+      errors: {},
+      title: this.evt.title
     methods:
       updateEvent: ->
         that = this
         $.ajax(
           method: 'PUT'
           data:
-            event: that.event
-          url: '/events/' + that.event.id + '.json',
+            event: that.evt
+          url: '/events/' + that.evt.id + '.json',
           success: (res)->
             that.errors = {}
-            that.event = res
+            # that.evt = res
+            # title = res.title
             that.editMode = false
           error: (res)->
             that.errors = res.reponseJSON.errors
@@ -39,10 +43,12 @@ ready = ->
         that = this
         $.ajax(
           method: 'DELETE'
-          url: '/events/' + that.event.id + '.json',
+          url: '/events/' + that.evt.id + '.json',
           success: (res)->
-            events.events.$remove(that.event)
+            that.events.$remove(that.evt)
             return
+          error: (res)->
+            that.errors = res.reponseJSON.errors  
         )
   })
 
@@ -74,7 +80,7 @@ ready = ->
         address: ''
         organizer_id: ''
         all_tags: ''
-    errors: {}
+      errors: {}
     methods:
       addEvent: ->
         that = this
@@ -89,7 +95,7 @@ ready = ->
             return
         )
         return
-    ready: ->
+    mounted: ->
       that = this
       $.ajax(
         url:
