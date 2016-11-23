@@ -1,0 +1,17 @@
+<h1>ArDemo#index</h1>
+
+<h1>Listing Posts</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>    
+  </tr>
+ 
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.post_title %></td>
+    <td><%= post.post_author %></td>    
+  </tr>
+<% end %>
+</table>

@@ -6,6 +6,7 @@ colin.lin@newbiiz.com/123
 ## Changes
 
 * [2016-11-17]测试模型Active Record的使用;
+* [2016-11-23]连接多个数据库,数据表加前缀
 
 ## 已包含特性:
 

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'ar_demo/index'
+  resources :ar_demo
+
   # resources :setup_organization
 
   resources :pins
